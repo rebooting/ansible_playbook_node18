@@ -16,4 +16,4 @@
           path: "{{ansible_env.HOME}}/.bashrc"
           regexp: '^export PATH=$HOME/node-v14.17.6-linux-x64/bin:$PATH'
           line: export PATH=$HOME/node-v14.17.6-linux-x64/bin:$PATH
-          state: absend
+          state: absent
