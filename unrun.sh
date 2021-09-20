@@ -8,4 +8,4 @@ podman run --rm -it \
     -v "${HOME}":/work:rw \
     --rm rebooting/ansible:latest ansible-playbook /work/.playbook/unplaybook.yml
     # -i inventories/testgroup.yml 
-sudo rm -rf $HOME/Projects/GoRepo
+
