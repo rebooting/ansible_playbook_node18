@@ -1,0 +1,33 @@
+---
+  - name: "generic playbook"
+    hosts: localhost
+    connection: local 
+
+
+    tasks:
+      - name: delete node14
+        file:
+          path="{{ansible_env.HOME}}/node14"
+          state=absent
+      - name: create node14 dir
+        file:
+          path="{{ansible_env.HOME}}/node13"
+          state=directory
+
+      - name: download node14
+        get_url:
+          url: https://nodejs.org/dist/v14.17.6/node-v14.17.6-linux-x64.tar.xz
+          dest: /tmp/node-v14.17.6-linux-x64.tar.xz
+          mode: '0444'
+      - name: unpack node14
+        ansible.builtin.unarchive:
+          src: /tmp/node-v14.17.6-linux-x64.tar.xz
+          dest: "{{ansible_env.HOME}}"
+      - name: PATH
+        ansible.builtin.lineinfile:
+          path: "{{ansible_env.HOME}}/.bashrc"
+          regexp: '^export PATH=$HOME/node-v14.17.6-linux-x64/bin:$PATH'
+          line: export PATH=$HOME/node-v14.17.6-linux-x64/bin:$PATH
+          state: present
+
+## ----------------------
