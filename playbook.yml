@@ -8,16 +8,16 @@
 
       - name: download node14
         get_url:
-          url: https://nodejs.org/dist/v14.17.6/node-v14.17.6-linux-x64.tar.xz
-          dest: /tmp/node-v14.17.6-linux-x64.tar.xz
+          url: https://nodejs.org/dist/v17.4.0/node-v17.4.0-linux-x64.tar.xz
+          dest: /tmp/node-v17.4.0-linux-x64.tar.xz
           mode: '0444'
       - name: unpack node14
         shell: "tar xf /tmp/node-v14.17.6-linux-x64.tar.xz --directory {{ansible_env.HOME}}"
       - name: PATH
         ansible.builtin.lineinfile:
           path: "{{ansible_env.HOME}}/.bashrc"
-          regexp: '^export PATH=$HOME/node-v14.17.6-linux-x64/bin:$PATH'
-          line: export PATH=$HOME/node-v14.17.6-linux-x64/bin:$PATH
+          regexp: '^export PATH=$HOME/node-v17.4.0-linux-x64/bin:$PATH'
+          line: export PATH=$HOME/node-v17.4.0-linux-x64/bin:$PATH
           state: present
 
 ## ----------------------

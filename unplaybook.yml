@@ -9,11 +9,11 @@
     tasks:
       - name: delete node14
         file:
-          path="{{ansible_env.HOME}}/node-v14.17.6-linux-x64"
+          path="{{ansible_env.HOME}}/node-v17.4.0-linux-x64"
           state=absent
       - name: PATH
         ansible.builtin.lineinfile:
           path: "{{ansible_env.HOME}}/.bashrc"
-          regexp: '^export PATH=$HOME/node-v14.17.6-linux-x64/bin:$PATH'
-          line: export PATH=$HOME/node-v14.17.6-linux-x64/bin:$PATH
+          regexp: '^export PATH=$HOME/node-v17.4.0-linux-x64/bin:$PATH'
+          line: export PATH=$HOME/node-v17.4.0-linux-x64/bin:$PATH
           state: absent
