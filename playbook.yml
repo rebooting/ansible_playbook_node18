@@ -3,13 +3,13 @@
     hosts: localhost
     connection: local 
     vars: 
-      node_version: v19.6.0
+      node_version: v18.14.0
 
     tasks:
       
       - name: download node
         get_url:
-          url: https://nodejs.org/dist/v19.6.0/node-v19.6.0-linux-x64.tar.xz
+          url: https://nodejs.org/dist/v18.14.0/node-v18.14.0-linux-x64.tar.xz
           dest: /tmp/node-linux-x64.tar.xz
           mode: '0444'
       - name: unpack node

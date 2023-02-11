@@ -3,7 +3,7 @@
     hosts: localhost
     connection: local 
     vars: 
-      node_version: v19.6.0
+      node_version: v18.14.0
     
 
 
